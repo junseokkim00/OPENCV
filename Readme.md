@@ -27,7 +27,9 @@ URL: https://www.youtube.com/watch?v=oXlwWbU8l2o&t=3429s
 
     > cv2.Canny("사용하려는 이미지 행렬값", 최소 threshold, 최대 threshold)
 
-    canny를 사용하게 되면 두 가지의 threshold를 잡아주게 된다. min threshold는 maxthreshold보다는 작고 min threshold보다 높은 픽셀에 대해서 작동을 하게 되며 이때는 약한 edge를 구현하게 된다. max threshold는 픽셀 값 중 max threshold가 이 값을 넘게 되면 강한 edge를 구현하게 된다.
+    canny를 사용하게 되면 두 가지의 threshold를 잡아주게 된다. 
+    min threshold는 maxthreshold보다는 작고 min threshold보다 높은 픽셀에 대해서 작동을 하게 되며 이때는 약한 edge를 구현하게 된다. 
+    max threshold는 픽셀 값 중 max threshold가 이 값을 넘게 되면 강한 edge를 구현하게 된다.
 
 **두번째 threshold**
 
