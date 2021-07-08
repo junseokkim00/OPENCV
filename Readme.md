@@ -23,7 +23,7 @@ URL: https://www.youtube.com/watch?v=oXlwWbU8l2o&t=3429s
 
     모서리의 개수가 이미지에 어떤 변화를 주냐에 따라 달라지기 때문에 grayscale과 blur을 시킨 것을 가지고 비교해볼 것이다.
 
-**첫번째 Canny**
+### **첫번째 Canny**
 
     > cv2.Canny("사용하려는 이미지 행렬값", 최소 threshold, 최대 threshold)
 
@@ -31,7 +31,7 @@ URL: https://www.youtube.com/watch?v=oXlwWbU8l2o&t=3429s
     min threshold는 maxthreshold보다는 작고 min threshold보다 높은 픽셀에 대해서 작동을 하게 되며 이때는 약한 edge를 구현하게 된다. 
     max threshold는 픽셀 값 중 max threshold가 이 값을 넘게 되면 강한 edge를 구현하게 된다.
 
-**두번째 threshold**
+### **두번째 threshold**
 
      > ret, thresh = cv.threshold("판단하려는 이미지 행렬값",threshold, 바뀌는 값, 바꾸는 형태)
 
@@ -42,7 +42,7 @@ URL: https://www.youtube.com/watch?v=oXlwWbU8l2o&t=3429s
     _- ret은 아직은 모름_
 
 
-**cv2.findContours & cv2.drawContours **
+### **cv2.findContours & cv2.drawContours**
 
     > contours, hierarchies = cv2.findContours( "행렬값" , 읽어들일 행렬 형태 , 처리 형태 )
 
@@ -74,7 +74,7 @@ URL: https://www.youtube.com/watch?v=oXlwWbU8l2o&t=3429s
 
 모든 이미지는 blue green red를 가지고 있음
 
-**cv2.split**
+### **cv2.split**
 
     > b, g, r = cv.split(img)
 
@@ -90,7 +90,7 @@ URL: https://www.youtube.com/watch?v=oXlwWbU8l2o&t=3429s
 
     이유는 각 color channel 행렬은 하나의 색상이므로 세번째 원소가 1이지만 생략된 것이다.
 
-**cv2.merge**
+### **cv2.merge**
 
     cv2.merge를 통해 합칠 수 있다. merge 함수에서는 배열을 파라미터로 받으며 꼭 행렬이 세가지여야한다.
 
@@ -115,3 +115,24 @@ URL: https://www.youtube.com/watch?v=oXlwWbU8l2o&t=3429s
     - NOT: 선택되지 않은 영역을 선택
 
     이 연산자들은 다음 범위인 masking에서 사용될 것이다.
+
+## **Masking**
+
+    bitwise 연산자를 사용할 시 세번째 인자로 mask가 존재한다. 이때 이 mask 인자에 만든 이미지 행렬을 넣어주게 되면 자동으로 사진과 만든 이미지의 교집합이 생성된다
+
+    !주의 (단, mask 이미지와 사진의 dimension이 같아야 한다.)
+
+
+## **Histogram**
+
+    히스토그램은 해당 사진의 픽셀을 색상에 따라서 나누는 기능이다
+
+    > cv2.calcHist(이미지들의 배열, 색상 채널, 마스크, histogram 사이즈, 범위)
+
+    - 히스토그램을 띄울 때는 matplotlib.pyplot을 이용해서 그래프 형태로 띄울 수 있다
+    - mask 이용시 조심해야하는 점, mask의 색상 채널 개수가 분석하려는 이미지와 같아야한다. (즉 무조건 1개의 색상 채널만 가지고 있어야한다)
+
+
+
+## **Thresholding**
+
