@@ -55,7 +55,7 @@ URL: https://www.youtube.com/watch?v=oXlwWbU8l2o&t=3429s
 
 
 
-## color spaces
+## **color spaces**
 
     총 5 가지 방식이 존재함
     - bgr: opencv에서 다룰 때 가장 기본적인 팔레트
@@ -68,7 +68,7 @@ URL: https://www.youtube.com/watch?v=oXlwWbU8l2o&t=3429s
 
     ex) cv2.cvtcolor(img, cv.COLOR_BGR2GRAY): img를 bgr에서 grayscale로 바꾼다는 의미
 
-## color channel
+## **color channel**
 
 모든 이미지는 blue green red를 가지고 있음
 
@@ -98,5 +98,18 @@ URL: https://www.youtube.com/watch?v=oXlwWbU8l2o&t=3429s
 
 
 
-## Blurring
+## **Blurring**
 
+
+
+## 2021/07/08
+
+## **BITWISE operations**
+
+    bitwise 연산자에는 총 4 가지 연산자가 존재한다
+    - AND: 교집합을 구하게 된다
+    - OR: 합집합을 구하게 된다
+    - XOR: 합집합 - 교집합
+    - NOT: 선택되지 않은 영역을 선택
+
+    이 연산자들은 다음 범위인 masking에서 사용될 것이다.
